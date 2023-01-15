@@ -90,13 +90,18 @@ console.log("Retorno do exercicio 02:", usuariosCadastrados)
 // 3 - Melhore o algoritmo da questao 3 fazendo a validacao dos tipos de campos, por exemplo: o campo nome deve ser uma string, e assim
 // por diante.
 
-// const finalListRef = newUsers.map(({name, lastName, email, administrator}) => {
-//     if (typeof name === 'string' && typeof lastName === 'string' && typeof lastName === 'string' && typeof administrator === 'boolean') {
-//         return {name, lastName, email, administrator}
-//     }
-// })
+function addNewUsersValidate (array) {
+    array.forEach(item => {
+        if (typeof array.name === 'string' && typeof array.lastName === 'string' && typeof array.lastName === 'string' && typeof array.administrator === 'boolean') {
+            usuariosCadastrados.push(item)
+        }        
+    })
+}
 
-// console.log("Retorno do exercicio 03:", finalListRef)
+//chamada da funcão
+addNewUsersValidate(newUsers)
+
+console.log("Retorno do exercicio 03:", )
 
 // 4 - Melhore o algoritmo da questao 3, impedindo que seja cadastrado um usuario com um email duplicado
 
