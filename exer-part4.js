@@ -3,7 +3,7 @@
     //  Constante são valores constantes que não podem ser alterados
 
 // Quais são os tipos utilizados pelo javascript? ex: string...
-//      String, number, float, objects, array
+//      String, number, underfined, Bigint Bollean, null, Symbol
 
 // Como funciona a conversão de tipos no javascript? Explique as duas formas e a diferenca entre elas (implicita e explicita)
 //      1 forma: toString(1); //converte um número em uma string
@@ -106,13 +106,13 @@ const produtos = [{
     descricao: 'PC gamer da empresa Ryzer'    
 }]
 
-// function printObject (obj) {
-//     obj.forEach(element => {
-//         console.log(`Nome: ${element.nome} | Descrição: ${element.descricao}`)
-//     });
-// }
+function printObject (obj) {
+    obj.forEach(element => {
+        console.log(`Nome: ${element.nome} | Descrição: ${element.descricao}`)
+    });
+}
 
-// printObject(produtos)
+printObject(produtos)
 // Agora crie uma lista com 5 produtos, percorra a lista, e mostre em tela o nome e a descricao do produto 
 
 
@@ -130,7 +130,27 @@ changeAttributeArray(produtos, 4, 'Caneca da Isa')
 console.log(produtos)
 
 // Agora crie uma funcao que, faca a busca de um produto de acordo com o id de mesmo, e retorne o
+function buscarPorId (arr, id) {
+    arr.find(item => {
+        if (item.id === id) {
+            console.log(item)
+        }
+    })
+}
 
+buscarPorId(produtos, 1111)
 
 // Crie uma funcao que faca a alteracao dos dados do produto de acordo com o id passado via parametro, a funcao devera receber
 // os parametros (id, novoNome) e faca a alteracao do nome do produto de acordo com o id do produto
+
+const changeName = function (id, novoNome) {
+    produtos.forEach(item => {
+        if (item.id == id) {
+            item.nome = novoNome
+        }
+    })
+}
+
+changeName(1111, 'Teclado Mecânico Razer')
+
+console.log(produtos)
